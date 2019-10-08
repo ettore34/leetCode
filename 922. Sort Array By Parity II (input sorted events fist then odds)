@@ -1,0 +1,22 @@
+class Solution {
+    public int[] sortArrayByParityII(int[] A) {
+    
+    int head = 1;
+    int tail = A.length -2;
+    int temp = -1;
+        
+    while(head < tail)
+    {
+        temp = A[head];
+        A[head] = A[tail];
+        A[tail] = temp;
+        
+        head += 2;
+        tail -= 2;    
+        
+    }      
+        
+        return A;
+    }
+    
+}
