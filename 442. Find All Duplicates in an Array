@@ -1,0 +1,28 @@
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        
+        List<Integer> answers = new ArrayList<>();
+        int number = 0 ; 
+        for(int i = 0 ; i < nums.length ; i++ )
+        {
+            number = Math.abs(nums[i]) -1 ;
+            System.out.println(number);
+            if(nums[number] < 0)
+            {
+                answers.add(Math.abs(nums[i]));
+            }
+            
+            else
+            {
+                nums[number] = nums[number] * (-1);
+            }
+            
+            
+        }
+        
+        return answers;
+        
+        
+        
+    }
+}
