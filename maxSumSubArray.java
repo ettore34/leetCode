@@ -7,7 +7,7 @@
 
 public class maxSumSubArray
 {
-    public static int findmax(int[] arr, int k)
+    public static int findmax(int[] arr, int window)
     {
         int maxValue = Integer.MIN_VALUE;
         int currentRunningSum = 0;
@@ -16,11 +16,11 @@ public class maxSumSubArray
         {
             currentRunningSum += arr[i];
 
-            if(i >= k )
+            if(i >= window )
             {
                 maxValue = Math.max(maxValue, currentRunningSum );
                 //keeps the window at the appropiate size
-                currentRunningSum -= arr[i - (k-1)];
+                currentRunningSum -= arr[i - (window-1)];
             }
 
         }
