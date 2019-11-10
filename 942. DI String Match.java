@@ -3,7 +3,7 @@ class Solution {
     int l = S.length();    
     int[] answer = new int[ l+1 ];     
     int max = S.length();
-    int min = 0; 
+    int min = 0;  
 
         
     for(int i = 0 ; i < S.length() ; i++)
