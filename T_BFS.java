@@ -56,6 +56,18 @@ public class T_BFS {
     }
 
 
+    public int min(Node root)
+    {
+        
+    }
+
+
+
+
+
+
+
+
     public int heightBFS( Node root)
     {
 
@@ -218,6 +230,30 @@ public class T_BFS {
 
 
 
+    public static Node arryToBST(int[] nums , int left, int right)
+    {
+        if (left>right)
+            return null;
+
+        if ( left == right)
+            return new Node(nums[left]);
+
+        int mid = (left + right) / 2;
+
+
+        Node root = new Node(nums[mid]);
+        
+        root.left = arryToBST(nums, left, mid-1);
+        root.right = arryToBST(nums, mid+1, right);
+
+        return root;
+
+    }
+
+
+
+
+
 
 
 
@@ -233,10 +269,9 @@ public class T_BFS {
 		root.right.right = new Node(35);
 
 		T_BFS i = new T_BFS();
-		System.out.println("Breadth First Search : ");
-		i.levelOrderQueue(root);
+
         System.out.println("\n\n\n");
-        System.out.println(i.heightOfTree(root));
+        System.out.println(i.heightBFS(root));
 
 
 
